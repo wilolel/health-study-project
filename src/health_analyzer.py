@@ -23,3 +23,16 @@ class HealthAnalyzer:
             }
 
         return pd.DataFrame(results).T
+
+    def compare_bp(self, smoker):
+        """Compare mean blood preassure between smokers and non-smokers"""
+
+        smoker_compare = self.df[smoker]
+
+        smokers = self.df.loc[smoker_compare == "Yes", "systolic_bp"]
+        non_smokers = self.df.loc[smoker_compare == "No", "systolic_bp"]
+
+        return {
+            print(f"Rökare medelvärde: {smokers.mean()}"),
+            print(f"Icke-rökare medelvärde: {non_smokers.mean()}")
+        }
