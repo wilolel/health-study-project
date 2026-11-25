@@ -1,9 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-## https://www.programiz.com/python-programming/pandas/methods/crosstab
-## https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.bar.html
-
 def smoker_age_percentage(df):
     """Calculating percentage of smoker by age group"""
     age_groups = pd.cut(
@@ -21,7 +18,7 @@ def smoker_age_percentage(df):
     return percentage
 
 def smoker_age_chart(df):
-    """"Stacked bar chart of smoking percentage by age group"""
+    """Stacked bar chart of smoking percentage by age group"""
 
     percentage = smoker_age_percentage(df)
 
