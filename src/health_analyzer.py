@@ -6,7 +6,7 @@ class HealthAnalyzer:
     def __init__(self, df):
         self.df = df
 
-    def health_stats(self, column):
+    def health_stats(self):
         """Descriptive stats for a chosen column"""
 
         columns = ["age", "weight", "height", "systolic_bp", "cholesterol"]
@@ -33,6 +33,6 @@ class HealthAnalyzer:
         non_smokers = self.df.loc[smoker_compare == "No", "systolic_bp"]
 
         return {
-            print(f"Rökare medelvärde: {smokers.mean()}"),
-            print(f"Icke-rökare medelvärde: {non_smokers.mean()}")
+            "smokers": smokers.mean(),
+            "non_smokers": non_smokers.mean()
         }
