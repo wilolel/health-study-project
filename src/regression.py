@@ -7,7 +7,7 @@ def linear_regression(df):
     """Linear regression using blood pressure and age"""
 
     X = df[["age"]]
-    y = df[["systolic_bp"]].to_numpy()
+    y = df["systolic_bp"].to_numpy()
 
     model = LinearRegression()
     model.fit(X, y)

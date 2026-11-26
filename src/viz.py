@@ -18,7 +18,7 @@ def smoker_age_percentage(df):
     return percentage
 
 def smoker_age_chart(df):
-    """Stacked bar chart of smoking percentage by age group"""
+    """Grouped bar chart of smoking percentage by age group"""
 
     percentage = smoker_age_percentage(df)
 
