@@ -5,6 +5,15 @@ class HealthAnalyzer:
     
     def __init__(self, df):
         self.df = df
+        smoker_compare = self.df["smoker"]
+
+        smokers = self.df.loc[
+            smoker_compare == "Yes", "systolic_bp"
+        ]
+        
+        non_smokers = self.df.loc[
+            smoker_compare == "No", "systolic_bp"
+        ]
 
     def health_stats(self):
         """Descriptive stats for a chosen column"""
@@ -24,15 +33,10 @@ class HealthAnalyzer:
 
         return pd.DataFrame(results).T
 
-    def compare_bp(self, smoker):
+    def compare_bp(self):
         """Compare mean blood preassure between smokers and non-smokers"""
 
-        smoker_compare = self.df[smoker]
-
-        smokers = self.df.loc[smoker_compare == "Yes", "systolic_bp"]
-        non_smokers = self.df.loc[smoker_compare == "No", "systolic_bp"]
-
         return {
-            "smokers": smokers.mean(),
-            "non_smokers": non_smokers.mean()
+            "smokers": self.smokers.mean(),
+            "non_smokers": self.non_smokers.mean()
         }
