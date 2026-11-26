@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 
 def smoker_age_percentage(df):
     """Calculating percentage of smoker by age group"""
+    
     age_groups = pd.cut(
         df["age"],
         bins=[17, 29, 39, 49, 59, 69, 79, 90],
